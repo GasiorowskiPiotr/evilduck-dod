@@ -1,0 +1,27 @@
+{
+  "name": "evilduck.dod",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "postbuild": "npm run package",
+    "package": "tfx extension create",
+    "gallery-publish": "tfx extension publish --rev-version",
+    "clean": "rimraf ./dist && rimraf ./*.vsix"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jquery": "^2.0.34",
+    "@types/q": "0.0.32",
+    "marked": "^0.3.6",
+    "vss-web-extension-sdk": "^4.125.2"
+  },
+  "devDependencies": {
+    "@types/marked": "^0.3.0",
+    "rimraf": "^2.5.4",
+    "tfx-cli": "^0.3.45",
+    "typescript": "^2.6.1"
+  }
+}

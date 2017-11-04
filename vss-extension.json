@@ -1,0 +1,61 @@
+{
+    "manifestVersion": 1,
+    "id": "evilduck-dod",
+    "version": "0.0.1",
+    "name": "Improved Definitions of Done",
+    "publisher": "evilduck",
+    "targets": [
+        { "id": "Microsoft.VisualStudio.Services" }
+    ],
+    "categories": [
+        "Collaborate"
+    ],
+    "tags": [
+        "agile", "definitions of done", "definition of done"
+    ],
+    "icons": {
+        "default": "icon.png"
+    },
+    "content": {
+        "details": {
+            "path": "overview.md"
+        }
+    },
+    "contributions": [
+        {  
+            "id": "evilduck-dod-page",
+            "type": "ms.vss-work-web.work-item-form-page",
+            "description": "Improved Definitions of Done",
+            "targets": [
+                "ms.vss-work-web.work-item-form"
+            ],
+            "properties": {
+                "name": "Definitions of Done",
+                "uri": "views/evilduck-dod.html"
+            } 
+        }
+    ],
+    "scopes": [
+        "vso.work"
+    ],
+    "files": [
+        {
+            "path": "dist",
+            "addressable": true
+        },
+        {
+            "path": "views",
+            "addressable": true
+        },
+        {
+            "path": "node_modules/vss-web-extension-sdk/lib",
+            "addressable": true,
+            "packagePath": "lib"
+        },
+        {
+            "path": "node_modules/marked/lib/marked.js",
+            "addressable": true,
+            "packagePath": "marked.js"
+        }
+    ]
+}
