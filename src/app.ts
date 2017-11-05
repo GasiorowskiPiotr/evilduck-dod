@@ -6,7 +6,7 @@ const getDefinitionsOfDone = () => {
     var deferred = Q.defer<string>();
     
     VSS.getService(VSS.ServiceIds.ExtensionData).then((dataService: any) => {
-        dataService.getValue("evilduck-dod-url").then((value: string) => {
+        dataService.getValue("evilduck-dod").then((value: string) => {
             deferred.resolve(value);
         });
     });
@@ -18,7 +18,7 @@ const saveDefinitionsOfDone = (content: string) => {
     var deferred = Q.defer();
 
     VSS.getService(VSS.ServiceIds.ExtensionData).then((dataService: any) => {
-        dataService.setValue("evilduck-dod-url", content).then(() => {
+        dataService.setValue("evilduck-dod", content).then(() => {
             deferred.resolve();
         });
     });
@@ -58,8 +58,13 @@ const logicProvider = () => {
             })
 
             getDefinitionsOfDone().then((content: string) => {
-                $dodEditor.val(content);
-                $dodDisplay.html(marked(content));
+                if(content) {
+                    $dodEditor.val(content);
+                    $dodDisplay.html(marked(content));
+                } else {
+                    $dodDisplay.html('No definitions of done created. Switch to "Editor Mode"');
+                }
+                
             });
 
             $('#saveBtn').on('click', () => {

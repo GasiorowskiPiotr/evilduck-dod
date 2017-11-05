@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "evilduck-dod",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "name": "Improved Definitions of Done",
     "publisher": "evilduck",
     "targets": [
